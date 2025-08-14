@@ -1,0 +1,87 @@
+1.1
+SELECT * FROM Customers;
+
+1.2.
+SELECT SupplierName, City, Phone FROM Suppliers;
+
+1.3. 
+ALTER TABLE Employees
+CHANGE COLUMN EmployeeID Identifier INT,
+CHANGE COLUMN BirthDate Date_of_Birth INT,
+CHANGE COLUMN Notes Description Varchar(20);
+
+SELECT EmployeeID AS Identifier, LastName, FirstName, BirthDate AS 'Birth of Date', Notes AS Description From Employees
+
+2.1
+Select * From Orders WHERE OrderDate = 1997-01-10;
+
+2.2
+Select * From Customers Where Country LIKE '%S%';
+
+2.3
+/*#1*/ 
+Select * From OrderDetails
+Where Quantity Between 10 and 25
+Order by Quantity ASC;
+
+/*#2*/
+Select * From OrderDetails
+Where Quantity >= 10 and Quantity <= 25;
+
+3.1 
+SELECT * FROM Employees
+Order by LastName DESC;
+
+3.2
+SELECT * FROM Orders
+Where CustomerID = 44 or CustomerID = 85 or CustomerID = 5
+Order by CustomerID DESC, EmployeeID ASC
+
+/*SELECT * FROM Orders
+Where CustomerID IN (44, 85, 5)
+Order by CustomerID DESC, EmployeeID ASC*/
+
+4.1 
+SELECT DISTINCT Country 
+FROM Customers
+Group By Country
+
+4.2
+Select Country, Count(Country) AS ZmoniuKiekis
+From Customers
+Group By Country
+
+4.3
+SELECT OrderID, AVG(Quantity), MAX(Quantity), MIN(Quantity)
+FROM OrderDetails
+Group By OrderID
+
+4.4
+SELECT Country, COUNT(Customerid) AS CustomersCount
+FROM Customers  
+GROUP BY Country  
+HAVING COUNT(Customerid) >= 5;
+
+5.1 
+SELECT CustomerName, City, OrderDate
+FROM Customers as c
+Join Orders as o
+ON c.customerId = o.customerId
+WHERE country LIKE 'Germany'
+ORDER BY OrderDate DESC
+
+5.2
+SELECT CategoryName, ProductName, Unit 
+FROM Categories as c
+JOIN Products as p
+ON c.CategoryID = p.CategoryID
+GROUP BY CategoryName, ProductName
+
+6.1
+SELECT o.OrderID, c.CustomerName AS 'Name of the Customer', p.ProductName, Address, o.OrderDate AS 'Order Date'
+FROM Customers AS c
+JOIN Orders AS o ON c.CustomerID = o.CustomerID
+JOIN OrderDetails AS od ON o.OrderID = od.OrderID
+JOIN Products AS p ON od.ProductID = p.ProductID
+ORDER BY c.CustomerName
+
