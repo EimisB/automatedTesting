@@ -1,0 +1,410 @@
+// //------ 1 ---------
+
+// function printFirstFunction(){
+//   console.log(`Tai mano pirmosios funkcijos rezultatas`);
+// }
+// printFirstFunction();
+
+// // //-------- 2 -----------
+
+// function getCurrentDay(){
+//   const date = new Date().getDate();
+//   console.log(`Šiandien yra ${date} mėnesio diena`);
+// }
+// getCurrentDay();
+
+// //--------- 3 --------------
+
+// let vaisius = `Apelsinas`;
+// console.log(vaisius);
+
+// function convertToAllCaps(){
+//   vaisius = vaisius.toLocaleUpperCase();
+// }
+// convertToAllCaps()
+// console.log(vaisius);
+
+//-------------- funkcijos su argumentais --------------
+// ------- 1 ----------
+
+// function gautiKambarioPlota(ilgis, plotis){
+//   console.log(ilgis * plotis);
+// }
+// gautiKambarioPlota(5,4);
+
+//-------- 2 -----------
+
+// function gautiKambarioPlota(ilgis, plotis){
+//   return ilgis * plotis
+// }
+// console.log(gautiKambarioPlota(5, 5));
+
+//-------- 3 -----------
+
+// function skaiciausTikrinimas(skaicius){
+//   let tikrinimas = (skaicius % 2 === 0) ? `Skaicius lyginis` : `Skaicius nera lyginis`;
+//   return tikrinimas;
+// }
+// console.log(skaiciausTikrinimas(2));
+// console.log(skaiciausTikrinimas(3));
+
+
+
+//------------------------------------ Uzduotys #1 ---------------------------------------------
+//-------- 1 -----------
+
+// function returnName(name){
+//   alert(name);
+// }
+// returnName(`Tomas`);
+
+//-------- 2 -----------
+
+// function getRandomNumber(){
+//   let number = Math.floor(Math.random()*10);
+//   console.log(number);
+// }
+// getRandomNumber();
+
+//-------- 3 -----------
+
+// function getNamesLength(firstName, lastName){
+//   let fullName = firstName + ` ` + lastName;
+//   let totalLength = firstName.length + lastName.length;
+//   return `${fullName} => ${totalLength}`;
+// }
+// console.log(getNamesLength(`Petras`, `Jonaitis`));
+
+//-------- 4 -----------
+
+// function checkAge(){
+//   let age = prompt(`Iveskite savo amziu:`);
+
+//   if (age >= 18){
+//     alert(`Galite pirkti energetinius gerimus`);
+//   } else {
+//     let confirmation = confirm(`Ar turite tevu sutikima`);
+//     if (confirmation) {
+//       alert(`Galite pirkti energetinius gerimus`);
+//     } else {
+//       alert(`Energetiniu gerimu pirkti negalima`);
+//     }
+//   }
+// }
+// checkAge();
+
+//-------- 5 -----------
+
+// function gautiRaide(raidesIndeksas) {
+//   let raides = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+//     "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+//   return raides[raidesIndeksas];
+// }
+
+// let atsitiktinisSkaicius = Math.floor(Math.random() * 26) + 1;
+// console.log(gautiRaide(atsitiktinisSkaicius));
+
+//-------- 6 -----------
+
+// function matematiniuOperacijuAtlikimas(n1, n2, operatorius) {
+//   switch (operatorius) {
+//     case `sum`:
+//       return n1 + n2;
+//     case `sub`:
+//       return n1 - n2;
+//     case `div`:
+//       return n1 / n2;
+//     case `multi`:
+//       return n1 * n2;
+//     default:
+//       return `Neteisingai ivestas operatorius`
+//   }
+// }
+// console.log(matematiniuOperacijuAtlikimas(5, 5, `sum`));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, `sub`));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, `div`));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, `multi`));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, `%`));
+
+//-------- 7 -----------
+
+// function gautiSkaiciu() {
+//   return Math.floor(Math.random() * 10) + 1;
+// }
+
+// function pakeltiKvadratu(skaicius) {
+//   return skaicius ** 2;
+// }
+
+// console.log(pakeltiKvadratu(gautiSkaiciu()));
+
+//------------------------------------ Uzduotys #2 ---------------------------------------------
+//-------- 1 -----------
+
+// let returnName = name => alert(name);
+// returnName(`Tomas`);
+
+//-------- 2 -----------
+
+// let getRandomNumber = () => {
+//   let number = Math.floor((Math.random() * 5) + 1);
+//   console.log(number);
+// }
+// getRandomNumber();
+
+//-------- 3 -----------
+
+// let getNamesLength = (firstName, lastName) => {
+//   let fullName = firstName + ` ` + lastName;
+//   let totalLength = firstName.length + lastName.length;
+//   return `${fullName} => ${totalLength}`;
+// }
+// console.log(getNamesLength(`Petras`, `Jonaitis`));
+
+//-------- 4 -----------
+
+// let checkAge = () => {
+//   let age = prompt(`Įveskite savo amžių:`);
+
+//   (age >= 18) ? alert(`Galite pirkti energetinius gėrimus`) : confirm(`Ar turite tėvų sutikimą?`)
+//       ? alert(`Galite pirkti energetinius gėrimus`) : alert(`Energetinių gėrimų pirkti negalima`);
+// };
+// checkAge();
+
+//-------- 5 -----------
+
+// const raides = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+//   "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+// let gautiRaide = raidesIndeksas => {
+//   return raides[raidesIndeksas];
+// }
+
+// let atsitiktinisSkaicius = Math.floor(Math.random() * 26);
+// console.log(gautiRaide(atsitiktinisSkaicius));
+
+//-------- 6 -----------
+
+// let matematiniuOperacijuAtlikimas = (n1, n2, op) => {
+//   if (op === 'sum') return n1 + n2;
+//   else if (op === 'sub') return n1 - n2;
+//   else if (op === 'div') return n1 / n2;
+//   else if (op === 'multi') return n1 * n2;
+//   else return 'Neteisingai įvestas operatorius';
+// };
+
+// console.log(matematiniuOperacijuAtlikimas(5, 5, 'sum'));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, 'sub'));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, 'div'));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, 'multi'));
+// console.log(matematiniuOperacijuAtlikimas(5, 5, '%'));
+
+//-------- 7 -----------
+
+// let gautiSkaiciu = () => Math.floor(Math.random() * 10) + 1;
+// let pakeltiKvadratu = (skaicius) => skaicius ** 2;
+
+// console.log(pakeltiKvadratu(gautiSkaiciu()));
+
+//------------------------------------ Uzduotys #3 ---------------------------------------------
+//-------- 1 -----------
+
+// const skaiciusMasyvas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// let sudetiSkaicius = () => { // arrow funkcijos pvz
+//   let suma = 0;
+//   skaiciusMasyvas.forEach(skaicius => {
+//     suma += skaicius;
+//   });
+//   return suma
+// }
+
+// console.log(sudetiSkaicius());
+
+//-------- 2 -----------
+
+// function suskaiciuotiZodzius(sakinys) { // deklaruojamos funkcijos pvz
+//   return sakinys.trim().split(' ').length; //split() siuo atveju is sakinio zodziu, pagal *tarpa* padaro masyva [`Cia`, `turi`, `buti`, `irasytas`, `tekstas`]
+// }
+
+// console.log(suskaiciuotiZodzius(`Cia turi buti irasytas tekstas`));
+
+//-------- 3 -----------
+
+// let tikrintiArLyginis = function (skaicius) { //Function expression pvz
+//     let tikrinimas = (skaicius % 2 === 0) ? `Skaicius lyginis` : `Skaicius nera lyginis`;
+//   console.log(tikrinimas);
+// }
+// tikrintiArLyginis(10);
+// tikrintiArLyginis(5);
+
+//-------- 4 -----------
+
+// let rastiDidziausiaSkaiciu = (n1, n2, n3) => Math.max(n1, n2, n3)
+
+// console.log(rastiDidziausiaSkaiciu(10, 222, 5)); // 222
+// console.log(rastiDidziausiaSkaiciu(1000, 222, 5)); // 1000
+// console.log(rastiDidziausiaSkaiciu(1000, 222, 55555)); // 55555
+
+//------------------------------------ Uzduotys #4 ---------------------------------------------
+//--------  Whale Language -----------
+// ------------------------------ paprastai ---------------------------------
+
+// let textToConvert = `turpentine and turtles`;
+// let vowels = [`a`, `e`, `i`, `o`, `u`];
+
+// function whaleLanguageConverter() {
+//   let tempArray = [];
+
+//   for (let i = 0; i < textToConvert.length; i++) {
+//     for (let j = 0; j < vowels.length; j++) {
+//       if (textToConvert[i] === vowels[j]) {
+//         if (vowels[j] === `e` || vowels[j] === `u`) {
+//           for (let z = 0; z < 2; z++) {
+//             tempArray.push(vowels[j]);
+//           }
+//         } else {
+//           tempArray.push(vowels[j]);
+//         }
+//       }
+//     }
+//   }
+//   return tempArray.join(``).toUpperCase();
+// }
+// console.log(whaleLanguageConverter());
+
+//--------------------------- patobulinta versija (del idomumo) --------------------------------
+
+// let textToConvert = `turpentine and turtles`;
+// let vowels = [`a`, `e`, `i`, `o`, `u`];
+
+// function whaleLanguageConverter() {
+//   return textToConvert.split('').map(letter => { // map() is teksto atskiru elementu skiriamu su `` padaro masyva, tuomet paima kiekviena elementa kaip paviene raide
+//       if (vowels.includes(letter)) { // tikrina ar raide yra balsiu masyve
+//         return (letter === 'e' || letter === 'u') ? [letter, letter] : [letter]; // jeigu *e* arba *u* grazina dvi tas pacias raides, jeigu kitas balsis tik 1 raide
+//       }
+//       return []; //jeigu 
+//   }).flat().join('').toUpperCase(); // flat() - isskaido masyva i viena lygi; join() - is masyvo elementu padaro texta
+// }
+// console.log(whaleLanguageConverter());
+
+
+//-------------  Robot Language ---------------------
+
+// let consonants = [`B`, `C`, `D`, `F`, `G`, `H`, `J`, `K`, `L`, `M`, `N`, `P`, `Q`, `R`, `S`, `T`, `V`, `W`, `X`, `Z`];
+
+// function robotLanguageConverter(text) {
+//   let resultArray = [];
+
+//   for (let i = 0; i < text.length; i++) { // eina per tekstini koda, kuri norima isversti
+//     for (let j = 0; j < consonants.length; j++) { // eina per priebalsiu masyva
+//       if (text[i].toUpperCase() === consonants[j]) { // tikrina ar text[i] (teksto vienas elementas) sutampa su priebalsiu masyvo elementu
+//         resultArray.push(consonants[j], `-`); // jeigu sutampa i vidinio masyvo pradzia prideda ta elementa + prideda bruksni *-*
+//       }
+//     }
+//   }
+//   if (resultArray[resultArray.length - 1] === `-`) { // jeigu vidinis masyvas baigiasi bruksniu, tiesiog ji panaikina su pop()
+//     resultArray.pop();
+//   }
+
+//   return resultArray.join(``); // grazina laikina masyva, kuri sujungia su join()
+// }
+
+// console.log(robotLanguageConverter(`Hello world`));
+
+//------------------------------------ Uzduotys #5 ---------------------------------------------
+
+// function skaiciuotuvas() {
+//   let arNoriTesti = true; // paprastas flag'as
+
+//   while (arNoriTesti) { // atlieka kol *arNoriTesti* yra true
+//     let n1 = Number(prompt(`Iveskite pirma skaiciu:`));
+//     let n2 = Number(prompt(`Iveskite antra skaiciu:`));
+//     let operatorius = prompt(`Pasirinkite operatoriu: (+, -, *, /)`);
+
+//     let rezultatas; // tuscias kintamasis, kuriam bus priskirtas rezultatas
+
+//     if (operatorius === `+`) {
+//       rezultatas = n1 + n2;
+//     } else if (operatorius === `-`) {
+//       rezultatas = n1 - n2;
+//     } else if (operatorius === `*`) {
+//       rezultatas = n1 * n2;
+//     } else if (operatorius === `/`) {
+//       rezultatas = n1 / n2;
+//     } else {
+//       alert(`Neteisingas operatorius`);
+//     }
+
+//     alert(`Rezultatas: ${rezultatas}`);
+//     arNoriTesti = confirm(`Ar norite testi?`); // jeigu false, nutraukia cikla, nes flag'as pasikeicia i false ir while ciklas nebevykdomas, nes nebeatitinka salygos
+//   }
+// }
+// skaiciuotuvas();
+
+//------------------------------------ Uzduotys #6 ---------------------------------------------
+
+// let bibliotekosKnygos = [];
+
+// function pridetiKnyga() {
+//   let naujaKnyga = prompt(`Iveskite knygos pavadinima:`).toLocaleLowerCase();
+//   if (bibliotekosKnygos.includes(naujaKnyga)) {
+//     alert(`Tokia knyga jau bibliotekoje egzistuoja.`);
+//   } else {
+//     bibliotekosKnygos.push(naujaKnyga);
+//     alert(`Knyga sekmingai prideta`);
+//   }
+// }
+
+// function rodytiVisasKnygas() {
+//   bibliotekosKnygos.length === 0 ? alert(`Knygu sarasas tuscias`) : alert(`Knygu sarasas:\n${bibliotekosKnygos.join("\n")}`)
+// }
+
+// function istrintiKnyga() {
+//   let istrinti = prompt(`Iveskite knygos pavadinima, kuria norite istrinti`).toLocaleLowerCase();
+
+//   if (bibliotekosKnygos.includes(istrinti)) {
+//     let knygosIndeksas = bibliotekosKnygos.findIndex(k => k.toLowerCase() === istrinti); // gauna ivestos knygos indeksa, masyve
+
+//     bibliotekosKnygos.splice(knygosIndeksas, 1); // pasalina viena indeksa pradedant nuo nurodyto
+//     alert(`Knyga ${istrinti} buvo pasalinta.`)
+//   } else {
+//     alert(`Tokios knygos nera.`);
+//   }
+// }
+
+// function bibliotekosValdymas() {
+//   let testiDarbą = true; // paprastas flag'as. Kol bus true, tol leis while cikla
+
+//   while (testiDarbą) {
+//     let galimiPasirinkimai = prompt(`Bibliotekos valdymas:\n1. Prideti knyga\n2. Rodyti visas knygas\n3. Salinti knyga\n4. Baigti darba`).toLocaleLowerCase();
+//     switch (galimiPasirinkimai) {
+//       case '1':
+//       case 'prideti knyga':
+//         pridetiKnyga();
+//         break;
+
+//       case '2':
+//       case 'rodyti visas knygas':
+//         rodytiVisasKnygas();
+//         break;
+
+//       case '3':
+//       case 'salinti knyga':
+//         istrintiKnyga();
+//         break;
+
+//       case '4':
+//       case 'baigti darba':
+//         testiDarbą = false;
+//         break;
+//       default:
+//         alert('Įveskite pasirinkimo numerį arba pilną pavadinimą');
+//     }
+//   }
+// }
+// bibliotekosValdymas();
+
+
+
+
